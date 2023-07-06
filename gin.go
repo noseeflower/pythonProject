@@ -33,7 +33,7 @@ func main() {
 		v.RegisterValidation("limitAge", limitAge)
 	}
 
-	v1 := r.Group("v1").Use(middel()).Use(middeltwo())
+	v1 := r.Group("v1")
 
 	v1.GET("/test", GetContext)
 	v1.POST("/test", PostContext)
@@ -93,7 +93,7 @@ func PostContext(c *gin.Context) {
 func GetContext(c *gin.Context) {
 	fmt.Println("Get路由")
 	c.JSON(http.StatusOK, gin.H{
-		"success": "花老师真帅",
+		"success": "花老师真tm帅",
 	})
 }
 
