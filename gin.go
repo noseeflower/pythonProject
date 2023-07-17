@@ -38,6 +38,7 @@ func main() {
 	v1.GET("/test", GetContext)
 	v1.POST("/test", PostContext)
 	v1.POST("/bindjson", BindJson)
+	v1.GET("/again", GetAgain)
 
 	r.POST("/Upload", Upload)
 	r.POST("/Uploads", Uploads)
@@ -94,6 +95,12 @@ func GetContext(c *gin.Context) {
 	fmt.Println("Get路由")
 	c.JSON(http.StatusOK, gin.H{
 		"success": "花老师真tm帅",
+	})
+}
+
+func GetAgain(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"fail": "全体目光向我看齐，我宣布个事儿！",
 	})
 }
 
